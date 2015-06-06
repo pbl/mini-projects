@@ -36,46 +36,8 @@ public class LargeNumber {
 		return result;
 	}
 	
-//	public static String mult(String n1, String n2){
-//		int nbrOfIterations = Math.min(Integer.parseInt(n1), Integer.parseInt(n2));
-//		if(nbrOfIterations == 0){
-//			return "0";
-//		}
-//		String bigger = "";
-//		String smaller = "";
-//		if(Integer.parseInt(n1) > Integer.parseInt(n2)){
-//			nbrOfIterations = Integer.parseInt(n2);
-//			smaller = n2;
-//			bigger = n1;
-//		} else {
-//			nbrOfIterations = Integer.parseInt(n1);
-//			smaller = n1;
-//			bigger = n2;
-//		}
-//		String result = "0";
-//		for(int i=0; i<nbrOfIterations; i++){
-//			result = LargeNumber.add(result, bigger);
-//		}
-//		return result;
-//	}
-	
+	// n smaller must be small enough so it can't parsed to an int
 	public static String mult(String nBigger, String nSmaller){
-		
-//		int nbrOfIterations = Math.min(Integer.parseInt(n1), Integer.parseInt(n2));
-//		if(nbrOfIterations == 0){
-//			return "0";
-//		}
-//		String bigger = "";
-//		String smaller = "";
-//		if(Integer.parseInt(n1) > Integer.parseInt(n2)){
-//			nbrOfIterations = Integer.parseInt(n2);
-//			smaller = n2;
-//			bigger = n1;
-//		} else {
-//			nbrOfIterations = Integer.parseInt(n1);
-//			smaller = n1;
-//			bigger = n2;
-//		}
 		String result = "0";
 		for(int i=0; i<Integer.parseInt(nSmaller); i++){
 			result = LargeNumber.add(result, nBigger);
