@@ -1,15 +1,7 @@
 puts "How many primes?"
-limit = gets.chomp.to_i
+limit = gets.chomp.to_i - 1
 puts 'Result:'
 puts ''
-
-# primes = [2];
-# (3..limit).each{ |x|
-#   if(!primes.any? {|p| x % p == 0})
-#     primes << x
-#   end
-# }
-# puts primes
 
 primes = [2]
 i = 3
