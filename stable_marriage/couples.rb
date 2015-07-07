@@ -6,10 +6,11 @@ class Couples
   end
 
   def put(man_id, woman_id)
-    @couples[man_id/2] = [man_id, woman_id]
+    @couples[(man_id.to_i)/2] = [man_id, woman_id]
   end
 
   def print
+    # require "debugger"; debugger
     @couples.each do |x|
       puts format_couple x
     end

@@ -11,5 +11,4 @@ class Names
   def get id
     @name_map[id]
   end
-
 end
