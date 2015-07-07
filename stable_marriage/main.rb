@@ -1,16 +1,18 @@
-require_relative 'names'
-require_relative 'match'
+require_relative 'parser'
+require_relative 'compare_output'
 
-names = Names.new
-names.add('1', 'Ross')
-names.add('2', 'Monica')
-names.add('3', 'Chandler')
-names.add('4', 'Phoebe')
-names.add('5', 'Joey')
-names.add('6', 'Rachel')
+files = Dir.entries('./test_files')
 
-match = Match.new names
-match.add(['6', '4', '2'], ['3', '5', '1'])
-match.add(['2', '6', '4'], ['5', '1', '3'])
-match.add(['6', '4', '2'], ['1', '5', '3'])
-match.run
+files = (files.map {|filename| filename.split('.')[0]}).uniq
+files.reject! { |filename| filename.nil? }
+
+files.each do |filename|
+  match = Parser.new("./test_files/#{filename}.in").run
+  result = match.run
+  correct_result = (CompareOutput.new).run(result, "./test_files/#{filename}.out")
+  if correct_result
+    puts "#{filename} was succesfully solved"
+  else
+    puts "#{filename} was not solved correctly"
+  end
+end

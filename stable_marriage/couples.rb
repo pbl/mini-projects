@@ -10,15 +10,18 @@ class Couples
   end
 
   def print
-    # require "debugger"; debugger
+    result = Array.new(@couples.length)
+    count = 0
     @couples.each do |x|
-      puts format_couple x
+      result[count] = format_couple x
+      count += 1
     end
+    result
   end
 
   def format_couple pair
     man = @names.get(pair[0])
     woman = @names.get(pair[1])
-    "#{man} -- #{woman}"
+    "#{man} -- #{woman}\n"
   end
 end
